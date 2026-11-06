@@ -19,3 +19,4 @@ async function publish(){try{await admin('publish',{edition_id:editing.id});msg(
 async function showPlayers(){try{const x=await admin('players',{edition_id:editing.id});$('players').replaceChildren();x.players.forEach(p=>{const d=document.createElement('div');d.className='item';d.textContent=`${p.nickname} · ${p.score} pts · ${p.finished_at?'Finalizó':'En juego'}`;$('players').append(d)})}catch(e){msg(e.message)}}
 status();const saved=sessionStorage.getItem('magos_session');if(saved){try{session=JSON.parse(saved);next()}catch{}}
 </script></body></html>
+
